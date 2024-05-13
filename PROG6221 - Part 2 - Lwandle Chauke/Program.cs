@@ -38,6 +38,7 @@ class Recipe
         return totalCalories;
     }
 
+    //method to check if the total calories exceed 300 calories to trigger notification
     public void CheckCalories()
     {
         if (CalculateTotalCalories() > 300)
