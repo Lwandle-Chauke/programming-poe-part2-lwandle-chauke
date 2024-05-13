@@ -12,6 +12,7 @@ class Ingredient
     public string FoodGroup { get; set; }
 }
 
+//class representing recipe
 class Recipe
 {
     public string Name { get; set; }
