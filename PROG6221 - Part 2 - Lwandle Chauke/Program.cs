@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-//class representing an ingredient
+// Class representing an ingredient
 class Ingredient
 {
-    //ingredient properties
+    // Ingredient properties
     public string Name { get; set; }
     public double Quantity { get; set; }
     public string Unit { get; set; }
@@ -12,22 +12,16 @@ class Ingredient
     public string FoodGroup { get; set; }
 }
 
-//class representing recipe
+// Class representing a recipe
 class Recipe
 {
     public string Name { get; set; }
     public List<Ingredient> Ingredients { get; set; }
-    //list of ingredients required 
     public List<string> Steps { get; set; }
-    //list of steps required 
-  
-    //delegate and event for calorie notification
     public delegate void CalorieNotificationHandler(Recipe recipe);
-    //delegate to handle calorie notification
     public event CalorieNotificationHandler CalorieNotification;
-    //event to trigger notification
 
-    //method to calculate the total calories of the recipe
+    // Method to calculate the total calories of the recipe
     public double CalculateTotalCalories()
     {
         double totalCalories = 0;
@@ -38,7 +32,7 @@ class Recipe
         return totalCalories;
     }
 
-    //method to check if the total calories exceed 300 calories to trigger notification
+    // Method to check if the total calories exceed 300 calories to trigger notification
     public void CheckCalories()
     {
         if (CalculateTotalCalories() > 300)
@@ -51,6 +45,7 @@ class Recipe
 class MyRecipeApp
 {
     static List<Recipe> recipes = new List<Recipe>();
+    static int recipeCounter = 1; // counter to assign unique numeric identifiers to recipes
 
     static void Main(string[] args)
     {
@@ -133,6 +128,9 @@ class MyRecipeApp
         recipe.CalorieNotification += Recipe_CalorieNotification;
         recipe.CheckCalories();
 
+        // Sort recipes by name
+        recipes.Sort((x, y) => string.Compare(x.Name, y.Name));
+
         Console.WriteLine("\nRecipe entered successfully!");
     }
 
@@ -150,24 +148,23 @@ class MyRecipeApp
         }
 
         Console.WriteLine("\nRecipes:");
-        recipes.Sort((x, y) => string.Compare(x.Name, y.Name));
 
-        foreach (var recipe in recipes)
+        // Display recipes with numeric identifiers and names
+        for (int i = 0; i < recipes.Count; i++)
         {
-            Console.WriteLine(recipe.Name);
+            Console.WriteLine($"{i + 1}. {recipes[i].Name}");
         }
 
-        Console.Write("\nEnter the name of the recipe you want to view: ");
-        string recipeName = Console.ReadLine();
+        Console.Write("\nEnter the number of the recipe you want to view: ");
+        int recipeNumber = Convert.ToInt32(Console.ReadLine());
 
-        Recipe selectedRecipe = recipes.Find(r => r.Name == recipeName);
-        if (selectedRecipe != null)
+        if (recipeNumber > 0 && recipeNumber <= recipes.Count)
         {
-            DisplayRecipe(selectedRecipe);
+            DisplayRecipe(recipes[recipeNumber - 1]);
         }
         else
         {
-            Console.WriteLine("Recipe not found.");
+            Console.WriteLine("Invalid recipe number.");
         }
     }
 
