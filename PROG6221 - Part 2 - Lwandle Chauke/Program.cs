@@ -17,7 +17,9 @@ class Recipe
 {
     public string Name { get; set; }
     public List<Ingredient> Ingredients { get; set; }
+    //list of ingredients required 
     public List<string> Steps { get; set; }
+    //list of steps required 
 
     public delegate void CalorieNotificationHandler(Recipe recipe);
     public event CalorieNotificationHandler CalorieNotification;
