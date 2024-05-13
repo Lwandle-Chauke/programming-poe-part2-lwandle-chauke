@@ -195,21 +195,27 @@ class MyRecipeApp
         }
     }
 
-    // Method to display the details of a recipe
+    // Method to display the details of a recipe, including total calories
     static void DisplayRecipe(Recipe recipe)
     {
         Console.WriteLine("\nRecipe: " + recipe.Name);
         Console.WriteLine("Ingredients:");
+        double totalCalories = 0; // Variable to store total calories
         foreach (var ingredient in recipe.Ingredients)
         {
-            Console.WriteLine("- {0} ({1} {2}, {3} calories, Food group: {4})", ingredient.Name, ingredient.Quantity, ingredient.Unit, ingredient.Calories, ingredient.FoodGroup);
+            // Calculate and display calories for each ingredient
+            double ingredientCalories = ingredient.Quantity * ingredient.Calories;
+            totalCalories += ingredientCalories; // Add to total calories
+            Console.WriteLine("- {0} ({1} {2}, {3} calories, Food group: {4})", ingredient.Name, ingredient.Quantity, ingredient.Unit, ingredientCalories, ingredient.FoodGroup);
         }
+        Console.WriteLine("\nTotal Calories: " + totalCalories); // Display total calories
         Console.WriteLine("\nSteps:");
         for (int i = 0; i < recipe.Steps.Count; i++)
         {
             Console.WriteLine("{0}. {1}", i + 1, recipe.Steps[i]);
         }
     }
+
 
     // Method to scale a recipe
     static void ScaleRecipe()
