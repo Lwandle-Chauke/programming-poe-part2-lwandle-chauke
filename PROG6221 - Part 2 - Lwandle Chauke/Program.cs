@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+//class representing an ingredient
 class Ingredient
 {
     public string Name { get; set; }
