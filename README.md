@@ -1,4 +1,4 @@
-# MY Recipe App README
+# My Recipe App README
 
 ## Overview
 The Recipe App is a command-line application written in C# that allows users to manage recipes. It provides functionality for adding new recipes, viewing existing ones, and displaying detailed information about each recipe. Additionally, it includes a feature to warn users if the total calories of a recipe exceed 300.
@@ -32,4 +32,3 @@ Contributions to the Recipe App are welcome! If you encounter any issues or have
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-
