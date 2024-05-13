@@ -21,7 +21,7 @@ class Recipe
     public List<string> Steps { get; set; }
     //list of steps required 
   
-
+    //delegate and event for calorie notification
     public delegate void CalorieNotificationHandler(Recipe recipe);
     public event CalorieNotificationHandler CalorieNotification;
 
