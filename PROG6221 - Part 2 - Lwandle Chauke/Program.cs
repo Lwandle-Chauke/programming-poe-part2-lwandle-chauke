@@ -203,10 +203,8 @@ class MyRecipeApp
         double totalCalories = 0; // Variable to store total calories
         foreach (var ingredient in recipe.Ingredients)
         {
-            // Calculate and display calories for each ingredient
-            double ingredientCalories = ingredient.Quantity * ingredient.Calories;
-            totalCalories += ingredientCalories; // Add to total calories
-            Console.WriteLine("- {0} ({1} {2}, {3} calories, Food group: {4})", ingredient.Name, ingredient.Quantity, ingredient.Unit, ingredientCalories, ingredient.FoodGroup);
+            totalCalories += ingredient.Calories; // Add calories of each ingredient to total
+            Console.WriteLine("- {0} ({1} {2}, {3} calories, Food group: {4})", ingredient.Name, ingredient.Quantity, ingredient.Unit, ingredient.Calories, ingredient.FoodGroup);
         }
         Console.WriteLine("\nTotal Calories: " + totalCalories); // Display total calories
         Console.WriteLine("\nSteps:");
