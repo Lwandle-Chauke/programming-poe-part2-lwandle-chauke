@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //class representing an ingredient
 class Ingredient
 {
+    //ingredient properties
     public string Name { get; set; }
     public double Quantity { get; set; }
     public string Unit { get; set; }
