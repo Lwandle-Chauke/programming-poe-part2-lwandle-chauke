@@ -27,6 +27,7 @@ class Recipe
     public event CalorieNotificationHandler CalorieNotification;
     //event to trigger notification
 
+    //method to calculate the total calories of the recipe
     public double CalculateTotalCalories()
     {
         double totalCalories = 0;
