@@ -23,6 +23,7 @@ class Recipe
   
     //delegate and event for calorie notification
     public delegate void CalorieNotificationHandler(Recipe recipe);
+    //delegate to handle calorie notification
     public event CalorieNotificationHandler CalorieNotification;
 
     public double CalculateTotalCalories()
