@@ -8,7 +8,7 @@ The Recipe App is a command-line application written in C# that allows users to 
 ---
 
 ### Link to GitHub Repository
-https://github.com/Lwandle-Chauke/programming-poe-part2-lwandle-chauke/pulls
+https://github.com/Lwandle-Chauke/programming-poe-part2-lwandle-chauke
 
 ---
 
