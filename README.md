@@ -5,6 +5,9 @@
 #### Overview
 The Recipe App is a command-line application written in C# that allows users to manage recipes. It provides functionality for adding new recipes, viewing existing ones, scaling recipes, and displaying detailed information about each recipe. Additionally, it includes a feature to warn users if the total calories of a recipe exceed 300.
 
+###Link to GitHub Repository
+https://github.com/Lwandle-Chauke/programming-poe-part2-lwandle-chauke/pulls
+
 ---
 
 #### Features
